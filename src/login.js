@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Login = (props) => {
@@ -6,9 +6,15 @@ const Login = (props) => {
   const [password, setPassword] = useState('')
   const [emailError, setEmailError] = useState('')
   const [passwordError, setPasswordError] = useState('')
+  const [isFormValid, setIsFormValid] = useState(false) // State to track form validity
 
   const { loggedIn } = props 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    // Enable or disable the button based on form validity
+    setIsFormValid(email.trim() !== '' && password.trim() !== '' && !emailError && !passwordError)
+  }, [email, password, emailError, passwordError])
 
   const onButtonClick = () => {
     // Set initial error values to empty
@@ -73,7 +79,13 @@ const Login = (props) => {
       </div>
       <br />
       <div className={'inputContainer'}>
-        <input className={'inputButton'} type="button" onClick={onButtonClick} value={loggedIn ? 'Log out' : 'Log in'} />
+        <input 
+          className={'inputButton'} 
+          type="button" 
+          onClick={onButtonClick} 
+          value={loggedIn ? 'Log out' : 'Log in'} 
+          disabled={!isFormValid}
+        />
       </div>
     </div>
   )
