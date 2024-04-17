@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 
-const COUNTDOWN_TARGET = new Date("2024-04-1623:59:59")
+const COUNTDOWN_TARGET = new Date("2024-04-16T23:59:59");
 
 const getTimeLeft =() => {
-    const totalTimeLeft = COUNTDOWN_TARGET - Date();
+    const totalTimeLeft = COUNTDOWN_TARGET - new Date();
     const days = Math.floor(totalTimeLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor(totalTimeLeft / (1000 * 60 * 60) % 24);
     const minutes = Math.floor(totalTimeLeft / ((1000 * 60)) % 60);

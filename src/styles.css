@@ -4,7 +4,7 @@
     flex-direction: row;
     justify-content: center;
     margin: auto;
-    gap: 30px;
+    gap: 12px;
 }
 
 .countdown h2 {
