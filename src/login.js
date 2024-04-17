@@ -40,7 +40,7 @@ const Login = (props) => {
       localStorage.removeItem('user')
       props.setLoggedIn(false)
     } else {
-      navigate('./countdown')
+      navigate('/countdown')
     }
   
     // Authentication calls will be made here...
