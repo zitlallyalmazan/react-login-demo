@@ -107,6 +107,8 @@
     cursor: not-allowed;
   }
 
-.buttonContainer {
+.countdown .colorchange {
     margin-left: 45%;
+    background-color: white;
+    color: blue;
 }
