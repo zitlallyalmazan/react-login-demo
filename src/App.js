@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Home from './home';
-import Login from './login';
-import Countdown from './countdown';
+import Home from './Pages/home';
+import Login from './Pages/login';
+import Countdown from './Pages/countdown';
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';

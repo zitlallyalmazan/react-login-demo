@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-import Explosion from './explosion.jsx';
+import Explosion from '../explosion.jsx';
 
 const TIMER_DURATION = 30; // Timer duration in seconds
 
