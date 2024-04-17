@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<Home email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/countdown" element={<Countdown setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
-          <Route path="/exploded" element={<Exploded setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
+          <Route path="/Exploded" element={<Exploded setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
         </Routes>
       </BrowserRouter>
     </div>

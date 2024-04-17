@@ -2,15 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Exploded = (props) => {
-    const { loggedIn, email } = props 
+    const { loggedIn } = props 
     const navigate = useNavigate()
 
     const onButtonClick = () => {
         if (loggedIn) {
-          localStorage.removeItem('user')
           props.setLoggedIn(false)
         } else {
-          navigate('/login')
+          navigate('/')
         }
       }
 
@@ -24,9 +23,8 @@ const Exploded = (props) => {
                     className={'inputButton'}
                     type="button"
                     onClick={onButtonClick}
-                    value={loggedIn ? 'Log out' : 'Log in'}
+                    value={loggedIn ? 'Log In' : 'Log Out'}
                 />
-                {loggedIn ? <div>Your email address is {email}</div> : <div />}
             </div>
         </div>
     )
