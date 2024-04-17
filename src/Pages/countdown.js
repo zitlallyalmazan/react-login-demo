@@ -54,7 +54,6 @@ const Countdown = () => {
             <div className="content">
                 <div className="box">
                     <div className="value" style={{ color: countdownColor }}>{timeLeft}</div>
-                    <span className="label">Seconds</span>
                 </div>
             </div>
             <div className="button-container">

@@ -109,8 +109,9 @@
   }
 
 .countdown .colorchange {
-    background-color: white;
-    color: blue;
+    background-color: #6495ed;
+	border-color: transparent;
+    color: white;
 	cursor: pointer;
 	border-radius: 5px;
 	padding: 10px 20px;
@@ -123,8 +124,9 @@
 
 
 .countdown .explode {
-    background-color: white;
-    color: blue;
+    background-color: #6495ed;
+	border-color: transparent;
+    color: white;
 	cursor: pointer;
 	border-radius: 5px;
 	padding: 10px 20px;
