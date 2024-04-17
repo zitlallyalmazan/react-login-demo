@@ -14,7 +14,7 @@ const Exploded = (props) => {
       }
 
     return (
-        <div className="mainContainer">
+        <div className="lastContainer">
             <div className={'titleContainer'}>
                 <div>You Exploded!</div>
             </div>
