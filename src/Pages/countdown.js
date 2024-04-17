@@ -24,7 +24,7 @@ const Countdown = () => {
                     setExplodeBeforeTen(true);
                     setTimeout(() => {
                         // Redirect the user after showing explosion
-                        window.location.href = 'lastPageUrl';
+                        window.location.href = '/exploded';
                     }, 1000);
                 }
                 return prevTimeLeft - 1;
