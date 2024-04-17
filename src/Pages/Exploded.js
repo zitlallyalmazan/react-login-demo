@@ -7,6 +7,7 @@ const Exploded = (props) => {
 
     const onButtonClick = () => {
         if (loggedIn) {
+          localStorage.removeItem('user')
           props.setLoggedIn(false)
         } else {
           navigate('/')
