@@ -59,7 +59,7 @@ const Countdown = () => {
             </div>
             <div className="button-container">
                 <button className="colorchange" onClick={handleColorChange}>Change Color</button>
-                <button className="text-blue-500" onClick={explosion}>Explode</button>
+                <button className="explode" onClick={explosion}>Explode</button>
             </div>
             {showExplosion && <Explosion />}
         </div>

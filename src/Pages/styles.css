@@ -7,9 +7,10 @@
 	gap: 12px;
 }
 .countdown h2 {
-    margin-left: 45%;
+    margin-left: 46%;
 	margin-bottom: 20px;
 	font-size: 50px;
+	color: blue;
 }
 
 .countdown .box {
@@ -108,11 +109,25 @@
   }
 
 .countdown .colorchange {
-    margin-left: 45%;
     background-color: white;
     color: blue;
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 10px 20px;
+	display: absolute;
+	align-items: center;
+	margin-right: 50px;
+	margin-left: 41%;
+
 }
 
-.countdown .button-container {
+
+.countdown .explode {
+    background-color: white;
+    color: blue;
 	cursor: pointer;
+	border-radius: 5px;
+	padding: 10px 20px;
+	display: absolute;
+	align-items: center;
 }
