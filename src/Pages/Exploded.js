@@ -15,7 +15,7 @@ const Exploded = (props) => {
 
     return (
         <div className="lastContainer">
-            <div className={'titleContainer'}>
+            <div className={'title'}>
                 <div>You Exploded!</div>
             </div>
             <div className={'buttonContainer'}>

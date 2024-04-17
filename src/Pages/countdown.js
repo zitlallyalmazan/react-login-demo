@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
+// import './output.css';
 import Explosion from '../explosion.jsx';
 
 const TIMER_DURATION = 30; // Timer duration in seconds
@@ -24,6 +25,7 @@ const Countdown = () => {
                     setExplodeBeforeTen(true);
                     setTimeout(() => {
                         // Redirect the user after showing explosion
+                        //
                         window.location.href = '/exploded';
                     }, 1000);
                 }
@@ -56,8 +58,8 @@ const Countdown = () => {
                 </div>
             </div>
             <div className="button-container">
-                <button className="colorchange" onClick={handleColorChange}>Change color</button>
-                <button className="explode" onClick={explosion}>Explode</button>
+                <button className="colorchange" onClick={handleColorChange}>Change Color</button>
+                <button className="text-blue-500" onClick={explosion}>Explode</button>
             </div>
             {showExplosion && <Explosion />}
         </div>
