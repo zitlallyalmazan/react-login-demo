@@ -7,6 +7,7 @@
 	gap: 12px;
 }
 .countdown h2 {
+    margin-left: 41%;
 	margin-bottom: 20px;
 	font-size: 50px;
 }
@@ -91,7 +92,6 @@
 }
 
 .inputButton {
-    /* Normal button styles */
     background-color: #007bff;
     color: #ffffff;
     border: none;
@@ -102,7 +102,6 @@
   }
   
   .inputButton:disabled {
-    /* Disabled button styles */
     background-color: #cccccc;
     color: #666666;
     cursor: not-allowed;

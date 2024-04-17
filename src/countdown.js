@@ -1,47 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
 
-const COUNTDOWN_TARGET = new Date("2024-04-16T23:59:59");
+const TIMER_DURATION = 30;
 
-const getTimeLeft =() => {
-    const totalTimeLeft = COUNTDOWN_TARGET - new Date();
-    const days = Math.floor(totalTimeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(totalTimeLeft / (1000 * 60 * 60) % 24);
-    const minutes = Math.floor(totalTimeLeft / ((1000 * 60)) % 60);
-    const seconds = Math.floor((totalTimeLeft / 1000) % 60);
-    return { days, hours, minutes, seconds };
-}
-    
 const Countdown = () => {
-    const [timeLeft, setTimeLeft] = useState(() => getTimeLeft());
+    const [timeLeft, setTimeLeft] = useState(TIMER_DURATION);
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setTimeLeft(getTimeLeft())
-        }, 1000)
+            setTimeLeft(prevTimeLeft => {
+                if (prevTimeLeft === 0) {
+                    clearInterval(timer);
+                    // Timer has expired, you can handle what happens next here
+                }
+                return prevTimeLeft - 1;
+            });
+        }, 1000);
 
-        return() => {
-            clearInterval(timer)
-        };
+        return () => clearInterval(timer);
     }, []);
 
     return (
         <div className="countdown">
-            <h2>Countdown</h2>
+            <h2>Timer</h2>
             <div className="content">
-                {Object.entries(timeLeft).map((el) => {
-                    const label = el[0];
-                    const value = el[1];
-                    return (
-                        <div className="content">
-                            <div className="box" key={label}>
-                                <div className="value"><span></span>{value}</div>
-                                <span className="label">{label}</span>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>    
+                <div className="box">
+                    <div className="value">{timeLeft}</div>
+                    <span className="label">Seconds</span>
+                </div>
+            </div>
         </div>
     );
 };
