@@ -8,26 +8,31 @@ const Countdown = () => {
     const [timeLeft, setTimeLeft] = useState(TIMER_DURATION);
     const [countdownColor, setCountdownColor] = useState('black');
     const [showExplosion, setShowExplosion] = useState(false);
+    const [explodeClicked, setExplodeClicked] = useState(false);
+    const [explodeBeforeTen, setExplodeBeforeTen] = useState(false);
 
     useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(prevTimeLeft => {
                 if (prevTimeLeft === 0) {
                     clearInterval(timer);
-                } else if (prevTimeLeft === 10) {
-                    setShowExplosion(true); // Activate explosion effect when countdown reaches 10 seconds
+                    if (explodeClicked && !explodeBeforeTen) {
+                        
+                    }
+                } else if (prevTimeLeft === 10 && explodeClicked) {
+                    setShowExplosion(true);
+                    setExplodeBeforeTen(true);
+                    setTimeout(() => {
+                        // Redirect the user after showing explosion
+                        window.location.href = 'lastPageUrl';
+                    }, 1000);
                 }
                 return prevTimeLeft - 1;
             });
         }, 1000);
 
-        // Automatically trigger explosion when countdown reaches 10 seconds
-        if (timeLeft === 10) {
-            setShowExplosion(true);
-        }
-
         return () => clearInterval(timer);
-    }, []);
+    }, [explodeClicked, explodeBeforeTen]);
 
     const handleColorChange = () => {
         const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Generate a random color
@@ -35,7 +40,10 @@ const Countdown = () => {
     };
 
     const explosion = () => {
-        setShowExplosion(!showExplosion);
+        setExplodeClicked(true);
+        if (timeLeft >= 10) {
+            setShowExplosion(true);
+        }
     };
 
     return (
